@@ -1,0 +1,50 @@
+<!-- <div class="mainblock">
+    <div class="subblock">
+      <nav class="navbar" *ngIf="displayMenu">
+          <ul class="navbar">
+            <li class="navitem"><a routerLink="home" class="navlink" href="#">Home</a></li>
+            <li class="navitem" *ngIf="displayManager"><a routerLink="listStaff" class="navlink" href="#">Staff</a></li>
+            <li class="navitem" *ngIf="displayManager"><a routerLink="listproducts" class="nav-link" href="#">Food Products</a></li>
+            <li class="navitem" *ngIf="displayManager"><a routerLink="listmenu" class="nav-link" href="#">Menu</a></li>
+            <li class="navitem" *ngIf="displayStaff"><a routerLink="listorders" class="nav-link" href="#">Orders</a></li>
+            <li class="navitem" *ngIf="displayStaff"><a routerLink="createOrder" class="nav-link" href="#">Create Order</a></li>
+            <span title="Click here to logout"><li class="nav-item"><button class="btn btn-primary" (click)="logout()">Logout</button></li></span>
+          </ul>
+      </nav>
+    </div>
+  </div> -->
+
+<nav *ngIf="displayMenu" class="d-flex justify-content-around">
+  <div>
+    <ul>
+      <li>
+        <a routerLink="home" href="#"> <i></i>Midnight Cafe </a>
+      </li>
+      <li *ngIf="displayManager">
+        <a routerLink="listStaff" href="#">Staff</a>
+      </li>
+      <li *ngIf="displayManager">
+        <a routerLink="listproducts" href="#">Food Products</a>
+      </li>
+      <!-- <li *ngIf="displayManager"><a routerLink="listmenu" href="#">Menu</a></li> -->
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li *ngIf="displayStaff">
+        <a routerLink="listorders" href="#">Orders</a>
+      </li>
+      <li *ngIf="displayStaff">
+        <a routerLink="createOrder" href="#">Create Order</a>
+      </li>
+    </ul>
+  </div>
+  <div class="d-flex">
+    <p class="mx-4">{{ name | titlecase }}</p>
+    <p>
+      <a href="#" (click)="logout()" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-log-out" ></span> Log out
+      </a>
+    </p>
+  </div>
+</nav>
